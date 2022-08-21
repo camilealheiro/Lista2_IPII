@@ -47,7 +47,6 @@ public abstract class Pessoa {
 
     public String formatarData() {
         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String dataFormat = formatador.format(dataNascimento);
-        return dataFormat;
+        return formatador.format(dataNascimento);
     }
 }
