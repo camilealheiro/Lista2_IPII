@@ -8,6 +8,7 @@ public class MinhaLoteria {
         BilheteDeLoteria bilhetePremiado = new BilheteDeLoteria(6);
         for(int x = 6; x <= 15; x++) {
             //ArrayList não é usado e está dando problema no código (OutOfMemory)
+            //Se comentar o ArrayList e o bilhetes.add funciona normal.
             //ArrayList<BilheteDeLoteria> bilhetes = new ArrayList<>();
 
             boolean megaSena = false;

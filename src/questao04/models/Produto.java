@@ -67,7 +67,10 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto [id=" + id + ", nome=" + nome + ", descricao="
-                + descricao + "]";
+        String tela = String.format("%n%s%n", "/*Produto*/");
+        tela += String.format("|ID: %s%n|Nome: %s%n|Descricao: %s%n", id, nome, descricao);
+        return tela;
+//        return "Produto [id=" + id + ", nome=" + nome + ", descricao="
+//                + descricao + "]";
     }
 }

@@ -19,17 +19,18 @@ public class TesteFluxoCaixa {
 
         Transacao r1 = new LicencaEnterprise(LocalDateTime.of(2021, 6, 16, 17, 49), "Licenca da Empresa B", 6);
         Transacao r2 = new LicencaBasica(LocalDateTime.of(2022, 3, 15, 19, 44), "Licenca da Empresa F", 10);
-        Transacao r3 = new LicencaEnterprise(LocalDateTime.of(2022, 4, 22, 20, 56), "Licenca da Empresa G", 4);
+        Transacao r3 = new LicencaPlus(LocalDateTime.of(2022, 4, 22, 20, 56), "Licenca da Empresa G", 4);
         f1.adicionarTransacao(r1);
         f1.adicionarTransacao(r2);
         f1.adicionarTransacao(r3);
 
         System.out.printf("Despesas Totais Entre: %.2f%n", f1.calcularDespesas(LocalDate.of(2021, 6, 19), LocalDate.of(2021, 12, 21)));
-        System.out.printf("Receitas Totais Entre: %.2f%n", f1.calcularReceitas(LocalDate.of(2021, 6, 19), LocalDate.of(2022, 2, 21)));
+        System.out.printf("Receitas Totais Entre: %.2f%n", f1.calcularReceitas(LocalDate.of(2021, 6, 19), LocalDate.of(2022, 3, 21)));
         System.out.printf("Percentual Receitas: %.2f%n", f1.percentualReceitasNoMes(6, 2021));
         System.out.printf("Percentual Dispesas: %.2f%n", f1.percentualDespesasNoMes(3, 2022));
         System.out.printf("Saldo Atual: %.2f%n", f1.saldoAtual());
 
+        System.out.println("\n/*Listar Transacoes no mes*/");
         List<Transacao> lista = f1.listarTransacoesNoMes(6, 2021);
         System.out.println(lista);
     }

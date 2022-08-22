@@ -35,4 +35,15 @@ public class AlertaPreco {
     public void setPrecoAlvo(float precoAlvo) {
         this.precoAlvo = precoAlvo;
     }
+
+    public boolean equals(AlertaPreco alerta) {
+        return usuario.equals(alerta.getUsuario()) && produto.equals(alerta.getProduto()) && precoAlvo == alerta.getPrecoAlvo();
+    }
+
+    @Override
+    public String toString() {
+        String tela = String.format("%s%n", "/*Alerta*/");
+        tela += usuario.toString() + produto + "|Preco Alvo: " + precoAlvo;
+        return tela;
+    }
 }

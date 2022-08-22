@@ -38,7 +38,10 @@ public class Loja {
 
     @Override
     public String toString() {
-        return "Loja [id=" + id + ", nome=" + nome + ", endSite=" + endSite
-                + "]";
+        String tela = String.format("%n%s%n", "/*Loja*/");
+        tela += String.format("|ID: %s%n|Nome: %s%n|Site: %s%n", id, nome, endSite);
+        return tela;
+//        return "Loja [id=" + id + ", nome=" + nome + ", endSite=" + endSite
+//                + "]";
     }
 }

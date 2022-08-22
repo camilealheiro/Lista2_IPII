@@ -2,10 +2,10 @@ package questao04.models;
 
 import java.time.LocalDate;
 
-public class OfertaProduto {
+public class OfertaProduto implements Comparable<OfertaProduto>{
 
     private Produto produto;
-    private float preco;
+    private Float preco;
     private Loja lojaOFertante;
     private LocalDate data;
 
@@ -51,7 +51,15 @@ public class OfertaProduto {
 
     @Override
     public String toString() {
-        return "OfertaProduto [produto=" + produto + ", preco=" + preco
-                + ", lojaOFertante=" + lojaOFertante + ", data=" + data + "]";
+        String tela = String.format("%n%s%n", "/*Oferta Produto*/");
+        //tela += String.format("|Produto: %s%n|Preco: %", )
+        tela += produto + "|Preco = " + preco + "\n|Data = " + data + "\n"+ lojaOFertante;
+        tela += "------------------------------------------\n";
+        return tela;
+    }
+
+    @Override
+    public int compareTo(OfertaProduto outro) {
+        return preco.compareTo(outro.getPreco());
     }
 }

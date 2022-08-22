@@ -38,4 +38,15 @@ public class Usuario {
         this.dataNascimento = dataNascimento;
     }
 
+    public boolean equals(Usuario outroUsuario) {
+        return email.equals(outroUsuario.getEmail()) && nome.equals(outroUsuario.getNome()) && dataNascimento.equals(outroUsuario.getDataNascimento());
+    }
+
+    @Override
+    public String toString() {
+        String tela = String.format("%n%s%n", "/*Usuario*/");
+        //tela += String.format("|Produto: %s%n|Preco: %", )
+        tela += "|Nome: " + nome + "\n|Email = " + email + "\n|Data = " + dataNascimento + "\n";
+        return tela;
+    }
 }
